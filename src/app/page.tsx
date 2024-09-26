@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Robot from "@/assets/robot.png";
 import Logo from "@/assets/logo.png";
+import { Button } from '@/components/Button';
 
 export default function Home() {
   return (
@@ -27,32 +28,8 @@ export default function Home() {
       </section>
 
       <footer className='flex flex-col gap-2'>
-        <button className='rounded-lg
-        bg-primaryColors-1
-          font-sans text-[16px]
-          font-semibold 
-          leading-[22.4px] 
-          text-center 
-          text-neutral-4
-          h-12 
-          w-80
-
-        '>Criar uma conta</button>
-        <button className='
-          rounded-lg 
-          font-sans 
-          text-[16px] 
-          font-semibold 
-          leading-[22.4px] 
-          text-center 
-          bg-primaryColors-5 
-          text-primaryColors-1 
-          h-12 
-          w-80
-
-          border-2
-          border-[#8003D3] 
-        '>Já tenho uma conta</button>
+        <Button color='primary'>Criar uma conta</Button>
+        <Button color='secondary'>Já tenho uma conta</Button>
       </footer>
     </section>
   );
