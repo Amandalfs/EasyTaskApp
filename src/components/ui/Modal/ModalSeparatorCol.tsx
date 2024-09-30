@@ -4,7 +4,7 @@ type ModalSeparatorColProps = ComponentProps<"article">
 
 export function ModalSeparatorCol({ children, ...rest}: ModalSeparatorColProps){
     return (<article
-        className="flex flex-col gap-[10px] border-2 border-green-600"
+        className="flex flex-col gap-[10px]"
         {...rest}
     >
         {children}
