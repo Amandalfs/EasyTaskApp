@@ -29,6 +29,8 @@ export function ModalLoginUser({ activedModal, }: ModalLoginUserProps){
         </Modal.SeparatorCol>
 
     </Modal.Root>
-    <Modal.Filter/>
+    <a href="/">
+        <Modal.Filter/>
+    </a>
     </>)
 }
