@@ -11,10 +11,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode;
-  modal: React.ReactNode;
 }>) {
   return (
     <html lang="pt-br">
@@ -22,7 +20,6 @@ export default function RootLayout({
         className={`${inter.variable} ${inter.variable} antialiased`}
       >
         {children}
-        {modal}
       </body>
     </html>
   );

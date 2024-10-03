@@ -26,7 +26,21 @@ const config: Config = {
           4: "#BEBEBE"
         }
       },
-    },
+      keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },  
+        },
+        slideDown: {
+          '100%': { transform: 'translateY(100%)' },
+          '0%': { transform: 'translateY(0)' },  
+        }
+      },
+      animation: {
+        slideUp: 'slideUp 0.5s ease-out forwards', 
+        slideDown: 'slideDown 0.5s ease-in forwards',
+      }
+    }
   },
   plugins: [],
 };

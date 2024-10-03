@@ -4,12 +4,14 @@ import { Input } from "./ui/input";
 
 interface ModalLoginUserProps {
     activedModal: boolean
+    closeModal: () => void
 }
 
-export function ModalLoginUser({ activedModal, }: ModalLoginUserProps){
-    return (activedModal &&
+
+export function ModalLoginUser({ activedModal, closeModal }: ModalLoginUserProps){
+    return (
     <>
-    <Modal.Root>
+    <Modal.Root activated={activedModal}>
         <Modal.Title>Insira seus dados</Modal.Title>
         
         <Modal.SeparatorCol>
@@ -29,8 +31,12 @@ export function ModalLoginUser({ activedModal, }: ModalLoginUserProps){
         </Modal.SeparatorCol>
 
     </Modal.Root>
-    <a href="/">
-        <Modal.Filter/>
-    </a>
+        {
+            activedModal && (<section onClick={()=>{
+                closeModal()
+            }}>
+                <Modal.Filter/>
+            </section>)
+        }
     </>)
 }

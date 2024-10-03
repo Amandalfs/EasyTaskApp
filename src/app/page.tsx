@@ -1,11 +1,14 @@
+'use client'
 import Image from 'next/image'
 import Robot from "@/assets/robot.png";
 import Logo from "@/assets/logo.png";
 import { Button } from '@/components/ui/Button';
-import Link from 'next/link';
+import { useState } from 'react';
+import { ModalLoginUser } from '@/components/ModalLoginUser';
 
 
 export default function Home() {
+  const [modalLoginActivated, setModalLoginActivated] = useState<boolean>(false);
   return (
     <section className="flex flex-col justify-center items-center h-screen mx-8 gap-8">
         <header className="flex flex-row gap-1">
@@ -31,10 +34,11 @@ export default function Home() {
 
       <footer className='flex flex-col gap-2'>
         <Button color='primary'>Criar uma conta</Button>
-        <Link href={"/login"}>
-          <Button color='secondary'>Já tenho uma conta</Button>
-        </Link>
+          <Button color='secondary' onClick={()=>{
+            setModalLoginActivated(true)
+          }}>Já tenho uma conta</Button>
       </footer>
+      <ModalLoginUser closeModal={() => setModalLoginActivated(false)} activedModal={modalLoginActivated}/>
     </section>
   );
 }
