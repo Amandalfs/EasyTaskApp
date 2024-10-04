@@ -17,6 +17,7 @@ const config: Config = {
           2: "#8E00F4",
           3: "#B431FF",
           4: "#DDA3FF",
+          5: "#F4E3FF",
         },
         neutral: {
           1: "#0D0D0D",
@@ -25,7 +26,21 @@ const config: Config = {
           4: "#BEBEBE"
         }
       },
-    },
+      keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },  
+        },
+        slideDown: {
+          '100%': { transform: 'translateY(100%)' },
+          '0%': { transform: 'translateY(0)' },  
+        }
+      },
+      animation: {
+        slideUp: 'slideUp 0.5s ease-out forwards', 
+        slideDown: 'slideDown 0.5s ease-in forwards',
+      }
+    }
   },
   plugins: [],
 };
